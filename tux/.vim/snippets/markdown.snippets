@@ -1,0 +1,33 @@
+snippet bph "Blog Header" b
+---
+layout: post
+
+title: ${1:title}
+subtitle: ${2:subtitle}
+date: {{ .Date }}
+
+description: ${2:description}
+tags: ["", ""]
+image: 
+
+categories: [tux, itstuff]
+summary: 
+
+twitter_creator_id: 94538574
+draft: true
+---
+
+$0
+endsnippet
+
+
+snippet mcbl "code Block" b
+`!v repeat(nr2char(96),3)` ${1:language}
+$0
+`!v repeat(nr2char(96),3)`
+
+endsnippet
+
+snippet [ "link" 
+[${2:text}](${1:link})$0
+endsnippet

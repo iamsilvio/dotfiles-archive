@@ -4,6 +4,21 @@ if filereadable(expand('$VIMRUNTIME/defaults.vim'))
 	source $VIMRUNTIME/defaults.vim
 endif
 
+"plugin settings
+"----------------
+
+" Install and run vim-plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'SirVer/ultisnips'
+
+call plug#end()
 
 "regular settings
 "----------------
@@ -51,3 +66,13 @@ runtime macros/matchit.vim  "allows jumping between brackets with % in normal mo
 " if a line is longer than 80 characters the line end is marked as error
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+
+"plugin configuration
+"----------------
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/.vim/UltiSnips/']
+
+let g:UltiSnipsExpandTrigger="<tab>"
+" list all snippets for current filetype
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
