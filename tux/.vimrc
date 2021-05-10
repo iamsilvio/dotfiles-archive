@@ -23,6 +23,8 @@ call plug#end()
 "regular settings
 "----------------
 set shm+=I "disable welcome screen
+"set t_kb=^?
+set t_kb=
 
 " ui
 set number    "show line numbers
@@ -51,6 +53,8 @@ set shiftwidth=2  "used for autoindent and << and >> operators in normal mode
 set autoindent    "copies indent from current line to the next line
 set expandtab     "tabs will expand to whitespace characters
 
+"set backspace=indent,eol,start
+
 " key timeout values
 set esckeys         "allows function keys to be recognized in Insert mode
 set ttimeoutlen=20  "timeout for a key code mapping
@@ -60,8 +64,6 @@ set timeoutlen=1000 "time(ms) to wait for key mappings
 syntax enable               "turn syntax highlighting on
 filetype plugin indent on   "load plugin and indent files associated a detected filetype
 runtime macros/matchit.vim  "allows jumping between brackets with % in normal mode
-
-
 
 " if a line is longer than 80 characters the line end is marked as error
 highlight ColorColumn ctermbg=magenta
