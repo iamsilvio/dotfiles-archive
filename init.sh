@@ -20,3 +20,9 @@ ln -sfn "$cur_dir/tux/.vim/snippets" ~/.vim/UltiSnips
 
 # git
 ln -sf "$cur_dir/gen/_gitignore" ~/.gitignore
+
+# gpg
+mkdir -p ~/.gnupg
+ln -sf "$cur_dir/tux/.gnupg/gpg.conf" ~/.gnupg/gpg.conf
+ln -sf "$cur_dir/tux/.gnupg/scdaemon.conf" ~/.gnupg/scdaemon.conf
+ln -sf "$cur_dir/tux/.gnupg/gpg-agent.conf" ~/.gnupg/gpg-agent.conf

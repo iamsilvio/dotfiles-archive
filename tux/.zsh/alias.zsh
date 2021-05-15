@@ -9,6 +9,8 @@ alias h='history | sort -k2 | uniq -f2 | sort -bn'
 
 alias cl='clear'
 
+alias cal='cal -3'
+
 alias irc='tmux new -A -s irc'
 alias update='ll'
 
